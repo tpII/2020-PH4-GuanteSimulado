@@ -15,8 +15,8 @@ void draw(){
   background(80);
   float rxp = (mouseX-(width/2)) * 0.005;
   float ryp = (mouseY-(height/2)) * 0.005;
-  rx = rx*0.85 + rxp*0.15;
-  ry = ry*0.85 + ryp*0.15;
+  rx = rx*0.85 + rxp*0.15; //filtro compl.
+  ry = ry*0.85 + ryp*0.15; //filtro compl.
   translate(width/2, height/2);
   rotateY(rx);
   rotateX(ry); 
@@ -54,7 +54,7 @@ void draw(){
   
   translate(90,60,0);
   box(120,120,10);
- 
-  
+  println("X:"+mouseX); //imprime la posición del mouse en X
+  println("Y:"+mouseY); //imprime la posición del mouse en Y
 
 }
