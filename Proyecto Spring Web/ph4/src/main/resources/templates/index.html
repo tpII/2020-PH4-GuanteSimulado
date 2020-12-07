@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body  style="background-color:#2C2C2C;">
+ 
+  <br>
+  <div align="center">
+    <h1 style="color: white;">  <strong>PH4: Guante Simulado </strong></h1>
+    
+  </div>
+  
+  <br>
+  <p style="color: white;"> Las siguientes siglas indican las lecturas del modulo MPU6050 que fueron generadas aleatoreamente (acelerometro y giroscopio 3 ejes c/u) y los valores de la posicion del mouse dentro del gráfico de Processing:</p>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Ax</th> 
+        <th scope="col">Ay</th>
+        <th scope="col">Az</th>
+        <th scope="col">Gx</th>
+        <th scope="col">Gy</th>
+        <th scope="col">Gz</th>
+        <th scope="col">Mouse X</th>
+        <th scope="col">Mouse Y</th>
+      </tr>
+    </thead>
+    
+  </table>
+  <hr>
+<br>
+<br>
+  <div align="center">
+    
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal1">
+      Ver historial
+    </button>
+    <a href="/ph4/excel" type="button" class="btn btn-success" >
+      Descargar Excel
+    </a>
+
+    <a href="/ph4/deleteAll" type="button" class="btn btn-danger">
+      Eliminar historial
+    </a>
+    
+
+  </div>
+
+
+  <h1 th:number="${number}" style="color: white;"></h1>
+<!-- Modal ver historial-->
+  
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Historial</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--  -->
+        <table class="table">
+          <thead class="table table-striped">
+            <tr>
+              <th scope="col">Ax</th>
+              <th scope="col">Ay</th>
+              <th scope="col">Az</th>
+              <th scope="col">Gx</th>
+              <th scope="col">Gy</th>
+              <th scope="col">Gz</th>
+              <th scope="col">Mouse X</th>
+              <th scope="col">Mouse Y</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="valuesMPU : ${listValuesMPU}">
+                
+                  <td th:text="${valuesMPU.getAx()}"></td>
+                  <td th:text="${valuesMPU.getAy()}"></td>
+                  <td th:text="${valuesMPU.getAz()}"></td>
+                  <td th:text="${valuesMPU.getGx()}"></td>
+                  <td th:text="${valuesMPU.getGy()}"></td>
+                  <td th:text="${valuesMPU.getGz()}"></td>
+                  <td th:text="${valuesMPU.getMouseX()}"></td>
+                  <td th:text="${valuesMPU.getMouseY()}"></td>
+              
+                
+              </tr>
+           
+       
+          </tbody>
+        </table>
+
+      
+      
+ 
+
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+  
+      </div>
+    </div>
+  </div>
+</div>
+      
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</div>
+
+
+</body>
+
+</html>
+

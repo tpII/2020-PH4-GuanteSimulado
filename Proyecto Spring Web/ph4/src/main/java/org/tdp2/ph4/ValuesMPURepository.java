@@ -1,5 +1,6 @@
 package org.tdp2.ph4;
 
+import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -9,5 +10,7 @@ import org.tdp2.ph4.ValuesMPU;
 // CRUD refers Create, Read, Update, Delete
 
 public interface ValuesMPURepository extends CrudRepository<ValuesMPU, Integer> {
+
+    List<ValuesMPU> findAll();
 
 }
